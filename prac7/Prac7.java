@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
 /**
  *
  * @author Rosario
@@ -26,71 +25,27 @@ public class Prac7 {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
-    public static void main(String nombre, int edad) throws IOException {
-        // TODO code application logic here
-        Scanner s = null;
-        FileReader fr = null;
-        BufferedReader br = null;
-        //   new BufferedReader(new FileReader("C:\\\\Users\\\\Rosario\\\\Desktop\\\\FP_DAW\\\\Program\\\\Prac7\\\\src\\\\prac7\\\\datos_persona.txt"));
-        //BufferedWriter fw = new BufferedWriter(fw);
-        /*
-        ArrayList <Prac7> lista1 = new ArrayList<>(); 
-       File fichero = new File("C:\\Users\\Rosario\\Desktop\\FP_DAW\\Program\\Prac7\\src\\prac7\\datos_persona.txt");
-    
-        try{
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("~~~~~~Listado de alumnos~~~~~~");
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            s = new Scanner(fichero);
-            
-            while(s.hasNextLine()){
-                String linea = s.nextLine();
-                System.out.println(linea);
-            }
-        }catch (Exception ex){
-            System.out.println("Mensaje: " + ex.getMessage());
-        } finally{
-            try{
-                if(s != null)
-                    s.close();
-            } catch (Exception ex2){
-                System.out.println("Mensaje2: " + ex2.getMessage());
-            }
+    public static void main(String[] args) throws IOException {
+        leer_archivo("C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\Rosario\\\\\\\\\\\\\\\\Desktop\\\\\\\\\\\\\\\\FP_DAW\\\\\\\\\\\\\\\\Program\\\\\\\\\\\\\\\\Prac7\\\\\\\\\\\\\\\\src\\\\\\\\\\\\\\\\prac7\\\\\\\\\\\\\\\\datos_persona.txt");
+    }
+
+    public static void leer_archivo(String archivo) throws FileNotFoundException, IOException {
+        String cadena;
+        int aux = 1;
+        FileReader fr = new FileReader(archivo);
+        BufferedReader br = new BufferedReader(fr);
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("~~~~Lista de alumnos~~~~~~");
+        System.out.println("______________________");
+
+        while ((cadena = br.readLine()) != null) {
+            System.out.println("Nºalumno" + aux + "-----");
+            System.out.println(cadena);
+            System.out.println("---------------------");
+            aux++;
         }
-         */
- /*
-        FileReader entrada=null;
-        FileWriter salida=null;
-        
-        try{
-            entrada = new FileReader("C:\\\\\\\\Users\\\\\\\\Rosario\\\\\\\\Desktop\\\\\\\\FP_DAW\\\\\\\\Program\\\\\\\\Prac7\\\\\\\\src\\\\\\\\prac7\\\\\\\\datos_persona.txt");
-            salida = new FileWriter("C:\\Users\\Rosario\\Desktop\\FP_DAW\\Program\\Prac7\\src\\prac7\\\\\\\\copia.txt");
-            int c;
-            while((c=entrada.read()) != -1){
-                salida.write(c);
-            }
-        } catch (IOException ex){
-            System.out.println(ex);
-        } finally{
-            if(entrada != null){
-                try{
-                    entrada.close();
-                }catch(IOException ex){
-                }
-            }
-            if(salida != null){
-                try{
-                    salida.close();
-                }catch(IOException ex) {}
-            }
-            System.out.println("ejecutando");
-         */
-         /*
-         PrintWriter out = null;
-         try{
-             
-         }
-*/
+        br.close();
     }
 }
