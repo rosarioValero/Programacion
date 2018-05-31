@@ -50,7 +50,7 @@ public class Pr7_ejer3 {
             if(null != fichero){
                 fichero.close();
             }
-        } catch(Exception e2){
+        } catch(IOException e2){
             e2.printStackTrace();
         }
     }
@@ -113,7 +113,7 @@ public class Pr7_ejer3 {
             if(null != pw){
                 pw.close();
             }
-        } catch (Exception e2){
+        } catch (IOException e2){
             e2.printStackTrace();
         }
     }
