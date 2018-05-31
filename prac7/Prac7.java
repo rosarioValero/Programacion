@@ -41,7 +41,7 @@ public class Prac7 {
         System.out.println("______________________");
 
         while ((cadena = br.readLine()) != null) {
-            System.out.println("Nºalumno" + aux + "-----");
+            System.out.println("Nºalumno " + aux + " -----");
             System.out.println(cadena);
             System.out.println("---------------------");
             aux++;
